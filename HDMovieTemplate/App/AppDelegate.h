@@ -1,16 +1,20 @@
 //
 //  AppDelegate.h
-//  HDMovieTemplate
+//  HDMovie
 //
-//  Created by Tinhvv on 1/8/16.
-//  Copyright © 2016 Tinhvv. All rights reserved.
+//  Created by iService on 1/4/16.
+//  Copyright © 2016 Vinhdn. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+}
++(NSString *) appLink;
++(void) setLink: (NSString *) link;
++(NSString *) appSign;
++(void) setSign: (NSString *) link;
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -19,7 +23,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
-
+- (void) getConfig;
 @end
 

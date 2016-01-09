@@ -1,23 +1,54 @@
 //
 //  AppDelegate.m
-//  HDMovieTemplate
+//  HDMovie
 //
-//  Created by Tinhvv on 1/8/16.
-//  Copyright © 2016 Tinhvv. All rights reserved.
+//  Created by iService on 1/4/16.
+//  Copyright © 2016 Vinhdn. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "Define.h"
+#import <AFHTTPSessionManager.h>
 @interface AppDelegate ()
-
 @end
+
+static NSString *API_LINK;
+static NSString *SIGN;
 
 @implementation AppDelegate
 
++(NSString*) appLink{
+    return API_LINK;
+}
+
++(void) setLink:(NSString *) link{
+    API_LINK = link;
+}
+
++(NSString*) appSign{
+    return SIGN;
+}
+
++(void) setSign:(NSString *) link{
+    SIGN = link;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //    [self getConfig];
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void)getConfig{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:LINK_CONFIG parameters:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSString *llba = [responseObject valueForKeyPath:@"link"];
+        API_LINK = llba;
+        NSLog(@"API_LINK: %@", API_LINK);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -51,7 +82,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.tinhvv.hdmovie.HDMovieTemplate" in the application's documents directory.
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "me.vinhdn.HDMovie" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
@@ -60,7 +91,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HDMovieTemplate" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HDMovie" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -74,7 +105,7 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"HDMovieTemplate.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"HDMovie.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

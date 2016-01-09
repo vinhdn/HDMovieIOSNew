@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  PlayMovieVC.h
 //  HDMovieTemplate
 //
-//  Created by Tinhvv on 1/8/16.
+//  Created by iService on 1/9/16.
 //  Copyright © 2016 Tinhvv. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PlayMovieVC : UIViewController
 
 @end
-
