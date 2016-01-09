@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovePlay.h"
 
 @interface PlayMovieVC : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *nameLb;
+@property (weak, nonatomic) IBOutlet UIView *parentPlayerV;
+@property(nonatomic) NSString *movieId;
 @end

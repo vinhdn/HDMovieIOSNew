@@ -17,6 +17,10 @@
 		33D4CBED1C40C45400F4235C /* ic_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D4CBEC1C40C45400F4235C /* ic_play.png */; };
 		33D4CBF01C40C51400F4235C /* PlayMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBEF1C40C51400F4235C /* PlayMovieVC.m */; };
 		8662DCBBB35A33E177394B84 /* libPods-HDMovieTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2C9F1847C2DEF3A4473B5D /* libPods-HDMovieTemplate.a */; };
+		A3F604031C40F614003B2950 /* MovieStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F604021C40F614003B2950 /* MovieStoryboard.storyboard */; };
+		A3F604061C40F936003B2950 /* MovePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F604051C40F936003B2950 /* MovePlay.m */; };
+		A3F6040A1C410479003B2950 /* MPMoviePlayerController+Subtitles.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F604091C410479003B2950 /* MPMoviePlayerController+Subtitles.m */; };
+		A3F6040D1C41151F003B2950 /* Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F6040C1C41151F003B2950 /* Sub.m */; };
 		DE7BC50C1C3F89BD00D58031 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7BC50B1C3F89BD00D58031 /* main.m */; };
 		DE7BC5151C3F89BD00D58031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7BC5131C3F89BD00D58031 /* Main.storyboard */; };
 		DE7BC5181C3F89BD00D58031 /* HDMovieTemplate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE7BC5161C3F89BD00D58031 /* HDMovieTemplate.xcdatamodeld */; };
@@ -47,6 +51,13 @@
 		33D4CBEF1C40C51400F4235C /* PlayMovieVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMovieVC.m; sourceTree = "<group>"; };
 		4D8FCBC5ADA7469B673095B6 /* Pods-HDMovieTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovieTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovieTemplate/Pods-HDMovieTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8EAB40D8B7503DCAEC84C3 /* Pods-HDMovieTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovieTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovieTemplate/Pods-HDMovieTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		A3F604021C40F614003B2950 /* MovieStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MovieStoryboard.storyboard; sourceTree = "<group>"; };
+		A3F604041C40F936003B2950 /* MovePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovePlay.h; sourceTree = "<group>"; };
+		A3F604051C40F936003B2950 /* MovePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovePlay.m; sourceTree = "<group>"; };
+		A3F604081C410479003B2950 /* MPMoviePlayerController+Subtitles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+Subtitles.h"; sourceTree = "<group>"; };
+		A3F604091C410479003B2950 /* MPMoviePlayerController+Subtitles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+Subtitles.m"; sourceTree = "<group>"; };
+		A3F6040B1C41151F003B2950 /* Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sub.h; sourceTree = "<group>"; };
+		A3F6040C1C41151F003B2950 /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
 		AB2C9F1847C2DEF3A4473B5D /* libPods-HDMovieTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HDMovieTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BC5071C3F89BD00D58031 /* HDMovieTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDMovieTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BC50B1C3F89BD00D58031 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3F604071C410465003B2950 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A3F604081C410479003B2950 /* MPMoviePlayerController+Subtitles.h */,
+				A3F604091C410479003B2950 /* MPMoviePlayerController+Subtitles.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		C9D35F6CBE3B555D25FDED65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +132,7 @@
 		DE7BC5091C3F89BD00D58031 /* HDMovieTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A3F604071C410465003B2950 /* Utils */,
 				DE7BC5261C3F8C3C00D58031 /* App */,
 				DE7BC5291C3F8C3C00D58031 /* MVC */,
 				DE7BC52F1C3F8C3C00D58031 /* Resource */,
@@ -119,6 +140,7 @@
 				DE7BC51E1C3F89BD00D58031 /* Info.plist */,
 				DE7BC5161C3F89BD00D58031 /* HDMovieTemplate.xcdatamodeld */,
 				DE7BC50A1C3F89BD00D58031 /* Supporting Files */,
+				A3F604021C40F614003B2950 /* MovieStoryboard.storyboard */,
 			);
 			path = HDMovieTemplate;
 			sourceTree = "<group>";
@@ -173,6 +195,10 @@
 				33D4CBE71C3F906100F4235C /* Movie.m */,
 				33D4CBE81C3F906100F4235C /* Categories.h */,
 				33D4CBE91C3F906100F4235C /* Categories.m */,
+				A3F604041C40F936003B2950 /* MovePlay.h */,
+				A3F604051C40F936003B2950 /* MovePlay.m */,
+				A3F6040B1C41151F003B2950 /* Sub.h */,
+				A3F6040C1C41151F003B2950 /* Sub.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +311,7 @@
 				DE7BC51D1C3F89BD00D58031 /* LaunchScreen.storyboard in Resources */,
 				DE7BC51A1C3F89BD00D58031 /* Assets.xcassets in Resources */,
 				DE7BC5151C3F89BD00D58031 /* Main.storyboard in Resources */,
+				A3F604031C40F614003B2950 /* MovieStoryboard.storyboard in Resources */,
 				33D4CBED1C40C45400F4235C /* ic_play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,8 +377,11 @@
 				33D4CBEB1C3F906100F4235C /* Categories.m in Sources */,
 				DE7BC5181C3F89BD00D58031 /* HDMovieTemplate.xcdatamodeld in Sources */,
 				33D4CBE51C3F905400F4235C /* DetailController.m in Sources */,
+				A3F604061C40F936003B2950 /* MovePlay.m in Sources */,
+				A3F6040A1C410479003B2950 /* MPMoviePlayerController+Subtitles.m in Sources */,
 				33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */,
 				33D4CBEA1C3F906100F4235C /* Movie.m in Sources */,
+				A3F6040D1C41151F003B2950 /* Sub.m in Sources */,
 				DE7BC50C1C3F89BD00D58031 /* main.m in Sources */,
 				DE7BC5331C3F8C3C00D58031 /* AppDelegate.m in Sources */,
 				33D4CBF01C40C51400F4235C /* PlayMovieVC.m in Sources */,

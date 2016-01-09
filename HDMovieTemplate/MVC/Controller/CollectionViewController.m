@@ -28,7 +28,7 @@ static NSString * const reuseIdentifier = @"Cell";
         [AppDelegate setLink:llba];
         [AppDelegate setSign:[responseObject valueForKeyPath:@"sign"]];
         NSDictionary *parameters = @{@"sign": [AppDelegate appSign]};
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *dict= [ApiConnect sendRequest:HOMEPAGE method:@"GET" params:parameters];
             NSMutableArray *newData =  [[NSMutableArray alloc] init];
             if(dict == nil){
@@ -133,17 +133,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self presentViewController:monitorMenuViewController animated:NO completion:nil];
 }
 
--(BOOL)shouldAutorotate{
-    return NO;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortraitUpsideDown; // or Right of course
-}
-
--(UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
-}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

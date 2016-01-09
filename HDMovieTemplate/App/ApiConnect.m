@@ -70,4 +70,26 @@
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     return [manager GET:url parameters:parameters success:success failure:failure];
 }
++(AFHTTPRequestOperation *)getSub:(NSString *)url success:(void (^)(AFHTTPRequestOperation *, id _Nullable))success failure:(void (^)(AFHTTPRequestOperation * _Nullable, NSError *))failure{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSMutableString *urll = [[NSMutableString alloc] init];
+    [urll appendString: url];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    return [manager GET:urll parameters:nil success:success failure:failure];
+}
++(NSString*)getSu:api params:(NSMutableDictionary*)params{
+    NSError * error = nil;
+    NSURL *url = [NSURL URLWithString:api];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    if(data == nil) return nil;
+    NSString *strutf8 = [NSString stringWithUTF8String:[data bytes]];
+    if(strutf8) return strutf8;
+    NSString* str = [[NSString alloc]
+                     initWithData:data encoding: NSISOLatin1StringEncoding];
+    if(str)
+    return str;
+    NSString* strlat2 = [[NSString alloc]
+                     initWithData:data encoding: NSISOLatin2StringEncoding];
+    return strlat2;
+}
 @end

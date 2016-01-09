@@ -16,6 +16,7 @@
 
 - (IBAction)play:(UIButton *)sender {
     PlayMovieVC *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PlayMovieVC"];
+    monitorMenuViewController.movieId = [self movieId];
     [self presentViewController:monitorMenuViewController animated:NO completion:nil];
 }
 

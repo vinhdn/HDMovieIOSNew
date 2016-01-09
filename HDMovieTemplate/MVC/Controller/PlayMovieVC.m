@@ -8,36 +8,60 @@
 
 #import "PlayMovieVC.h"
 #import "ApiConnect.h"
-@import  MediaPlayer;
+#import  "MPMoviePlayerController+Subtitles.h"
 
 @implementation PlayMovieVC
 {
     MPMoviePlayerController *mp;
+    MovePlay* movie;
 }
 -(void)viewDidLoad{
     
-    [ApiConnect getVideoPlay:@"1148" success:^(NSURLSessionDataTask * dd, id _Nullable response) {
+    [ApiConnect getVideoPlay:[self movieId] success:^(NSURLSessionDataTask * dd, id _Nullable response) {
         NSLog(@"JSON %@", response);
+        NSDictionary* data = [response valueForKeyPath:@"r"];
+        movie = [[MovePlay alloc] initWithDictionary:data error:nil];
+        if (movie == nil) {
+            return;
+        }
+        self.nameLb.text = [movie MovieName];
+        NSURL *movieURL = [NSURL URLWithString:[movie LinkPlay]];
+        mp = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
+        
+        if (mp)
+        {
+            mp.view.frame = self.view.bounds;
+            
+            // save the movie player object
+            [mp setFullscreen:NO];
+            
+            // Play the
+            //        [self presentMoviePlayerViewControllerAnimated:mp];
+            [mp play];
+            
+            [self.parentPlayerV addSubview:mp.view];
+            for (NSDictionary *subD in movie.SubtitleExt) {
+                
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString* sub = [ApiConnect getSu:@"http://s.vn-hd.com:8080/store6/01032013/Hancock_2008_2in1_1080p_BluRay_DTS_x264_CtrlHD/Hancock_2008_2in1_1080p_BluRay_DTS_x264_CtrlHD_ENG.srt" params:nil];
+                if(sub != nil){
+                    [mp openWithSRTString:sub completion:^(BOOL finished) {
+                        [mp showSubtitles];
+                    } failure:^(NSError *error) {
+                        NSLog(@"ERror: %@", error);
+                    }];
+                }else{
+                    NSLog(@"Sub NIL");
+                }
+                });
+        }
+
     } failure:^(NSURLSessionDataTask * _Nullable ee, NSError * error) {
         NSLog(@"ERROR %@", error);
     }];
     
-    NSURL *movieURL = [NSURL URLWithString:@"http://plist.vn-hd.com/mp4v3/9c961ce97563121eaebf0f2a0b98142c/fa13e64f97dc41beb41d3835f90a1f9d/00000000000000000000000000000000/1148_320_480_ifpt.smil/playlist.m3u8"];
-    mp = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
-    
-    if (mp)
-    {
-        mp.view.frame = self.view.bounds;
-        
-        // save the movie player object
-        [mp setFullscreen:YES];
-    
-        // Play the
-//        [self presentMoviePlayerViewControllerAnimated:mp];
-        [mp play];
-        [self.view addSubview:mp.view];
     }
-}
 
 -(BOOL)shouldAutorotate{
     return NO;
