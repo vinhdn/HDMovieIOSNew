@@ -84,12 +84,17 @@
     if(data == nil) return nil;
     NSString *strutf8 = [NSString stringWithUTF8String:[data bytes]];
     if(strutf8) return strutf8;
+    NSString* strlat3 = [[NSString alloc]
+                         initWithData:data encoding: NSUnicodeStringEncoding];
+    if(strlat3) return strlat3;
+
     NSString* str = [[NSString alloc]
                      initWithData:data encoding: NSISOLatin1StringEncoding];
-    if(str)
-    return str;
+//    if(str)
+//    return str;
     NSString* strlat2 = [[NSString alloc]
                      initWithData:data encoding: NSISOLatin2StringEncoding];
+    
     return strlat2;
 }
 @end

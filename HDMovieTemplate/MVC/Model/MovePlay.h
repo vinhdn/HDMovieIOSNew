@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "JSONModel.h"
+#import "SubTitle.h"
 
 @interface MovePlay : JSONModel
 @property (strong, nonatomic) NSString<Optional>* MovieID;
 @property (strong, nonatomic) NSString* MovieName;
 @property (strong, nonatomic) NSString<Optional>* LinkPlay;
 @property (strong, nonatomic) NSString<Optional>* SourceLinkPlay;
-@property (strong, nonatomic) NSDictionary<Optional>* SubtitleExt;
+@property (strong, nonatomic) SubTitle<Optional>* SubtitleExt;
 @property (assign, nonatomic) int Episode;
 @property (assign, nonatomic) NSNumber<Optional>* CurrentSeason;
 @end
