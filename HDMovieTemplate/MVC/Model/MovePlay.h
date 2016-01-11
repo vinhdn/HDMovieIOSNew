@@ -18,4 +18,5 @@
 @property (strong, nonatomic) SubTitle<Optional>* SubtitleExt;
 @property (assign, nonatomic) int Episode;
 @property (assign, nonatomic) NSNumber<Optional>* CurrentSeason;
+@property (strong, nonatomic) NSMutableArray<Ignore>* listResolution;
 @end

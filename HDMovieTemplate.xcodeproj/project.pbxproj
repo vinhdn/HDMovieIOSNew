@@ -16,6 +16,13 @@
 		33D4CBEB1C3F906100F4235C /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBE91C3F906100F4235C /* Categories.m */; };
 		33D4CBED1C40C45400F4235C /* ic_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D4CBEC1C40C45400F4235C /* ic_play.png */; };
 		33D4CBF01C40C51400F4235C /* PlayMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBEF1C40C51400F4235C /* PlayMovieVC.m */; };
+		33D4CBF31C43467500F4235C /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBF21C43467500F4235C /* Utils.m */; };
+		33D4CBF61C43517E00F4235C /* Resolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBF51C43517E00F4235C /* Resolution.m */; };
+		33D4CBFD1C438FE600F4235C /* SelectionQualityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBFC1C438FE600F4235C /* SelectionQualityVC.m */; };
+		33D4CC001C439B0700F4235C /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBFF1C439B0700F4235C /* SelectionCell.m */; };
+		33D4CC021C43AF2000F4235C /* ic_check_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D4CC011C43AF2000F4235C /* ic_check_blue.png */; };
+		33D4CC051C43B2FD00F4235C /* SelectSubQC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CC041C43B2FD00F4235C /* SelectSubQC.m */; };
+		33D4CC081C43B37000F4235C /* SelectionSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CC071C43B37000F4235C /* SelectionSubCell.m */; };
 		8662DCBBB35A33E177394B84 /* libPods-HDMovieTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2C9F1847C2DEF3A4473B5D /* libPods-HDMovieTemplate.a */; };
 		A3815DD21C41FCAA00A0E4D8 /* ic_back_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A3815DCA1C41FCAA00A0E4D8 /* ic_back_black.png */; };
 		A3815DD31C41FCAA00A0E4D8 /* ic_back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A3815DCB1C41FCAA00A0E4D8 /* ic_back_white.png */; };
@@ -58,6 +65,19 @@
 		33D4CBEC1C40C45400F4235C /* ic_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_play.png; sourceTree = "<group>"; };
 		33D4CBEE1C40C51400F4235C /* PlayMovieVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayMovieVC.h; sourceTree = "<group>"; };
 		33D4CBEF1C40C51400F4235C /* PlayMovieVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMovieVC.m; sourceTree = "<group>"; };
+		33D4CBF11C43467500F4235C /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		33D4CBF21C43467500F4235C /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		33D4CBF41C43517E00F4235C /* Resolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resolution.h; sourceTree = "<group>"; };
+		33D4CBF51C43517E00F4235C /* Resolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resolution.m; sourceTree = "<group>"; };
+		33D4CBFB1C438FE600F4235C /* SelectionQualityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionQualityVC.h; sourceTree = "<group>"; };
+		33D4CBFC1C438FE600F4235C /* SelectionQualityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionQualityVC.m; sourceTree = "<group>"; };
+		33D4CBFE1C439B0700F4235C /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
+		33D4CBFF1C439B0700F4235C /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
+		33D4CC011C43AF2000F4235C /* ic_check_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_check_blue.png; sourceTree = "<group>"; };
+		33D4CC031C43B2FD00F4235C /* SelectSubQC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSubQC.h; sourceTree = "<group>"; };
+		33D4CC041C43B2FD00F4235C /* SelectSubQC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSubQC.m; sourceTree = "<group>"; };
+		33D4CC061C43B37000F4235C /* SelectionSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionSubCell.h; sourceTree = "<group>"; };
+		33D4CC071C43B37000F4235C /* SelectionSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionSubCell.m; sourceTree = "<group>"; };
 		4D8FCBC5ADA7469B673095B6 /* Pods-HDMovieTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovieTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovieTemplate/Pods-HDMovieTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8EAB40D8B7503DCAEC84C3 /* Pods-HDMovieTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovieTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovieTemplate/Pods-HDMovieTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		A3815DCA1C41FCAA00A0E4D8 /* ic_back_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_black.png; sourceTree = "<group>"; };
@@ -108,6 +128,8 @@
 			children = (
 				A3F604081C410479003B2950 /* MPMoviePlayerController+Subtitles.h */,
 				A3F604091C410479003B2950 /* MPMoviePlayerController+Subtitles.m */,
+				33D4CBF11C43467500F4235C /* Utils.h */,
+				33D4CBF21C43467500F4235C /* Utils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -203,6 +225,10 @@
 				33D4CBE41C3F905400F4235C /* DetailController.m */,
 				33D4CBEE1C40C51400F4235C /* PlayMovieVC.h */,
 				33D4CBEF1C40C51400F4235C /* PlayMovieVC.m */,
+				33D4CBFB1C438FE600F4235C /* SelectionQualityVC.h */,
+				33D4CBFC1C438FE600F4235C /* SelectionQualityVC.m */,
+				33D4CC031C43B2FD00F4235C /* SelectSubQC.h */,
+				33D4CC041C43B2FD00F4235C /* SelectSubQC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +246,8 @@
 				A3F6040C1C41151F003B2950 /* Sub.m */,
 				A3F6040E1C417C45003B2950 /* SubTitle.h */,
 				A3F6040F1C417C45003B2950 /* SubTitle.m */,
+				33D4CBF41C43517E00F4235C /* Resolution.h */,
+				33D4CBF51C43517E00F4235C /* Resolution.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +259,10 @@
 				33D4CBDA1C3F903500F4235C /* CollectionViewCell.m */,
 				33D4CBDB1C3F903500F4235C /* HeaderCollectionView.h */,
 				33D4CBDC1C3F903500F4235C /* HeaderCollectionView.m */,
+				33D4CBFE1C439B0700F4235C /* SelectionCell.h */,
+				33D4CBFF1C439B0700F4235C /* SelectionCell.m */,
+				33D4CC061C43B37000F4235C /* SelectionSubCell.h */,
+				33D4CC071C43B37000F4235C /* SelectionSubCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +289,7 @@
 			children = (
 				A3815DCA1C41FCAA00A0E4D8 /* ic_back_black.png */,
 				A3815DCB1C41FCAA00A0E4D8 /* ic_back_white.png */,
+				33D4CC011C43AF2000F4235C /* ic_check_blue.png */,
 				A3815DCC1C41FCAA00A0E4D8 /* ic_cc_disable.png */,
 				A3815DCD1C41FCAA00A0E4D8 /* ic_cc.png */,
 				A3815DCE1C41FCAA00A0E4D8 /* ic_hd_active.png */,
@@ -343,6 +376,7 @@
 				DE7BC51D1C3F89BD00D58031 /* LaunchScreen.storyboard in Resources */,
 				DE7BC51A1C3F89BD00D58031 /* Assets.xcassets in Resources */,
 				A3815DD31C41FCAA00A0E4D8 /* ic_back_white.png in Resources */,
+				33D4CC021C43AF2000F4235C /* ic_check_blue.png in Resources */,
 				A3815DD91C41FCAA00A0E4D8 /* ic_play_blue.png in Resources */,
 				DE7BC5151C3F89BD00D58031 /* Main.storyboard in Resources */,
 				A3815DD71C41FCAA00A0E4D8 /* ic_hd_disable.png in Resources */,
@@ -409,11 +443,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D4CBD81C3F902800F4235C /* CollectionViewController.m in Sources */,
+				33D4CBFD1C438FE600F4235C /* SelectionQualityVC.m in Sources */,
 				33D4CBE11C3F904300F4235C /* ApiConnect.m in Sources */,
 				33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */,
+				33D4CBF61C43517E00F4235C /* Resolution.m in Sources */,
+				33D4CBF31C43467500F4235C /* Utils.m in Sources */,
+				33D4CC081C43B37000F4235C /* SelectionSubCell.m in Sources */,
 				33D4CBEB1C3F906100F4235C /* Categories.m in Sources */,
+				33D4CC001C439B0700F4235C /* SelectionCell.m in Sources */,
 				DE7BC5181C3F89BD00D58031 /* HDMovieTemplate.xcdatamodeld in Sources */,
 				33D4CBE51C3F905400F4235C /* DetailController.m in Sources */,
+				33D4CC051C43B2FD00F4235C /* SelectSubQC.m in Sources */,
 				A3F604101C417C45003B2950 /* SubTitle.m in Sources */,
 				A3F604061C40F936003B2950 /* MovePlay.m in Sources */,
 				A3F6040A1C410479003B2950 /* MPMoviePlayerController+Subtitles.m in Sources */,

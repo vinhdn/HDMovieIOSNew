@@ -31,6 +31,7 @@
     [self.bgThumbV.layer setShadowRadius:3.0];
     [self.bgThumbV.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
     [self.desLb sizeToFit];
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 2000)];
     self.desLb.frame = CGRectMake(self.desLb.frame.origin.x, self.desLb.frame.origin.y, self.view.frame.size.width, self.desLb.frame.size.height);
     NSDictionary *parameters = @{@"sign": [AppDelegate appSign], @"movieId" : [self movieId]};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

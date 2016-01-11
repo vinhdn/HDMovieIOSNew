@@ -97,4 +97,22 @@
     
     return strlat2;
 }
++(NSString*)getQuality:(id)urlApi{
+    NSError * error = nil;
+    NSURL *url = [NSURL URLWithString:urlApi];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    if(data == nil || [data bytes] == nil) return nil;
+    NSString *strutf8 = [NSString stringWithUTF8String:[data bytes]];
+    if(strutf8) return strutf8;
+    NSString* strlat3 = [[NSString alloc]
+                         initWithData:data encoding: NSUnicodeStringEncoding];
+    if(strlat3) return strlat3;
+    
+    NSString* str = [[NSString alloc]
+                     initWithData:data encoding: NSISOLatin1StringEncoding];
+    NSString* strlat2 = [[NSString alloc]
+                         initWithData:data encoding: NSISOLatin2StringEncoding];
+    
+    return strlat2;
+}
 @end

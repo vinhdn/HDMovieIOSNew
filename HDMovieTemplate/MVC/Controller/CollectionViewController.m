@@ -106,7 +106,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Configure the cell
     Categories *cat = [self.listData objectAtIndex:indexPath.section];
     Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
-    cell.nameLb.text = [mov MovieName];
+    cell.nameLb.text = [mov KnownAs];
     [cell.thumbIV setImageWithURL:[NSURL URLWithString:[mov Poster100x149]]];
     return cell;
 }

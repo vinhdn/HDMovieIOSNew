@@ -5,6 +5,6 @@ target ‘HDMovieTemplate’ do
     pod 'AFNetworking', '~> 2.5'
     pod 'JSONModel', '~> 0.9.3'
     pod 'SVProgressHUD'
-
+    pod 'STPopup'
 end
 
