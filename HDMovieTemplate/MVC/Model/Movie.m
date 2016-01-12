@@ -9,5 +9,9 @@
 #import "Movie.h"
 
 @implementation Movie
-
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    if ([propertyName isEqualToString: @"Sequence"]) return YES;
+    return NO;
+}
 @end

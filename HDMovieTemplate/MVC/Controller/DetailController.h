@@ -10,6 +10,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "Movie.h"
 #import <QuartzCore/QuartzCore.h>
+#import "EPCell.h"
 
 @interface DetailController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *thumbIV;

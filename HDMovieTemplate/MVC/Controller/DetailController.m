@@ -10,8 +10,12 @@
 #import "ApiConnect.h"
 #import "Define.h"
 #import <QuartzCore/QuartzCore.h>
+#import <STPopup/STPopup.h>
 #import <AFHTTPSessionManager.h>
 #import "PlayMovieVC.h"
+#import "ListEpVC.h"
+@interface DetailController() <EPSelectedListener>
+@end
 @implementation DetailController
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -22,10 +26,22 @@
 - (IBAction)play:(UIButton *)sender {
     PlayMovieVC *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PlayMovieVC"];
     monitorMenuViewController.movieId = [self movieId];
-    [self presentViewController:monitorMenuViewController animated:NO completion:nil];
+    monitorMenuViewController.ep = 1;
+    [self presentViewController:monitorMenuViewController animated:YES completion:nil];
 }
-
+-(void)epSelected:(ListEpVC *)vc didSelectEP:(NSInteger)ep{
+    PlayMovieVC *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PlayMovieVC"];
+    monitorMenuViewController.movieId = [self movieId];
+    monitorMenuViewController.ep = ep;
+    [self presentViewController:monitorMenuViewController animated:YES completion:nil];
+}
 - (IBAction)showListEP:(id)sender {
+    ListEpVC *listEpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ListEpVC"];
+    listEpVC.numberEP = self.movie.Sequence;
+    listEpVC.delegate = self;
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:listEpVC];
+    popupController.style = STPopupStyleBottomSheet;
+    [popupController presentInViewController:self];
 }
 
 - (IBAction)back:(UIButton *)sender {

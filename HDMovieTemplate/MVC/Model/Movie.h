@@ -21,4 +21,5 @@
 @property (strong, nonatomic) NSString<Optional>* PlotVI;
 @property (strong, nonatomic) NSString<Optional>* PlotEN;
 @property (strong, nonatomic) NSString<Optional>* Backdrop;
+@property (assign, nonatomic) NSInteger Sequence;
 @end

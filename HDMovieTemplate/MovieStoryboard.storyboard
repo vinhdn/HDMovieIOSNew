@@ -365,6 +365,12 @@
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="SS2-Py-PUD"/>
                                             </constraints>
                                             <state key="normal" title="Danh sách tập"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0fc-pz-bLq"/>
+                                                    <exclude reference="SS2-Py-PUD"/>
+                                                </mask>
+                                            </variation>
                                             <connections>
                                                 <action selector="showListEP:" destination="VSm-ag-iEC" eventType="touchUpInside" id="Ve1-xR-egr"/>
                                             </connections>
@@ -416,6 +422,7 @@
                                         <constraint firstItem="Dfb-Ek-EHY" firstAttribute="top" secondItem="v1J-1Z-WNF" secondAttribute="bottom" constant="170" id="eUO-Nw-VXs"/>
                                         <constraint firstItem="3qg-Jo-Dlv" firstAttribute="leading" secondItem="vN4-dh-P1Y" secondAttribute="leading" id="eu9-e4-lIt"/>
                                         <constraint firstAttribute="trailing" secondItem="vN4-dh-P1Y" secondAttribute="trailing" constant="20" id="ft8-5w-OmZ"/>
+                                        <constraint firstItem="3qg-Jo-Dlv" firstAttribute="bottom" secondItem="Dfb-Ek-EHY" secondAttribute="bottom" id="gnH-LH-ner"/>
                                         <constraint firstItem="FLH-Dn-keA" firstAttribute="top" secondItem="vN4-dh-P1Y" secondAttribute="bottom" constant="2" id="hBL-8W-Zhq"/>
                                         <constraint firstItem="3qg-Jo-Dlv" firstAttribute="top" secondItem="vN4-dh-P1Y" secondAttribute="top" id="hDP-oA-hra"/>
                                         <constraint firstItem="FLH-Dn-keA" firstAttribute="top" secondItem="XXi-qz-kuQ" secondAttribute="bottom" constant="55" id="i79-5t-FAw"/>
@@ -447,6 +454,18 @@
                                             <exclude reference="N2C-qb-qo1"/>
                                             <exclude reference="hBL-8W-Zhq"/>
                                             <exclude reference="jtP-qA-rnI"/>
+                                            <exclude reference="1YY-p5-M3Q"/>
+                                            <exclude reference="29Y-fO-zcc"/>
+                                            <exclude reference="CKb-ol-kI1"/>
+                                            <exclude reference="GaA-YF-CX2"/>
+                                            <exclude reference="HyW-Dj-5gW"/>
+                                            <exclude reference="PRS-wP-ZK2"/>
+                                            <exclude reference="S9V-6H-31f"/>
+                                            <exclude reference="XZP-aR-XxV"/>
+                                            <exclude reference="eu9-e4-lIt"/>
+                                            <exclude reference="hDP-oA-hra"/>
+                                            <exclude reference="mmH-3a-uRQ"/>
+                                            <exclude reference="oGp-Ew-uAS"/>
                                             <exclude reference="GxD-RX-6uS"/>
                                             <exclude reference="Rrr-jH-Ky4"/>
                                             <exclude reference="UKT-EG-Ik7"/>
@@ -456,16 +475,6 @@
                                             <exclude reference="MNN-4v-vIL"/>
                                             <exclude reference="UuB-Nk-f5d"/>
                                             <exclude reference="inl-gI-fGt"/>
-                                            <exclude reference="1YY-p5-M3Q"/>
-                                            <exclude reference="29Y-fO-zcc"/>
-                                            <exclude reference="GaA-YF-CX2"/>
-                                            <exclude reference="HyW-Dj-5gW"/>
-                                            <exclude reference="PRS-wP-ZK2"/>
-                                            <exclude reference="S9V-6H-31f"/>
-                                            <exclude reference="XZP-aR-XxV"/>
-                                            <exclude reference="eu9-e4-lIt"/>
-                                            <exclude reference="hDP-oA-hra"/>
-                                            <exclude reference="mmH-3a-uRQ"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -966,7 +975,7 @@
         <!--List EpVC-->
         <scene sceneID="OUa-EH-IXt">
             <objects>
-                <collectionViewController id="Qso-AX-6Ml" customClass="ListEpVC" sceneMemberID="viewController">
+                <collectionViewController restorationIdentifier="ListEpVC" storyboardIdentifier="ListEpVC" id="Qso-AX-6Ml" customClass="ListEpVC" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mED-Fn-NQS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

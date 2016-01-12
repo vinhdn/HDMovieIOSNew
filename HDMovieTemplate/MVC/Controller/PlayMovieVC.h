@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *durationLb;
 @property (weak, nonatomic) IBOutlet UISlider *progressV;
 @property(nonatomic) NSString *movieId;
+@property(nonatomic) NSInteger ep;
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer;
 - (IBAction)pauseOrPlay:(UIButton*)sender;
 - (IBAction)back:(id)sender;
