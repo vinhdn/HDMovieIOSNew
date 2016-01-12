@@ -115,4 +115,17 @@
     
     return strlat2;
 }
++(NSURLSessionDataTask *)search:(NSString *)key success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableString *urll = [[NSMutableString alloc] init];
+    [urll appendString: @"http://movies.hdviet.com/tim-kiem-nhanh.html"];
+    NSDictionary *parameters = @{@"keyword" : key};
+    manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Version/8.0 Safari/538.44" forHTTPHeaderField:@"UserAgent"];
+    [manager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Version/8.0 Safari/538.44" forHTTPHeaderField:@"User-Agent"];
+        [manager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Version/8.0 Safari/538.44" forHTTPHeaderField:@"user-agent"];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    return [manager GET:urll parameters:parameters success:success failure:failure];
+}
 @end

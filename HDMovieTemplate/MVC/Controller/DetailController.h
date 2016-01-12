@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *desLb;
 @property (weak, nonatomic) IBOutlet UIView *bgThumbV;
 - (IBAction)play:(UIButton *)sender;
+- (IBAction)showListEP:(id)sender;
 - (IBAction)back:(UIButton *)sender;
 @property(nonatomic) NSString *movieId;
 @property(nonatomic) Movie *movie;

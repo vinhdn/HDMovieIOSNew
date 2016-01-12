@@ -14,10 +14,18 @@
 #import "PlayMovieVC.h"
 @implementation DetailController
 
+-(void)viewDidAppear:(BOOL)animated{
+    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+}
+
 - (IBAction)play:(UIButton *)sender {
     PlayMovieVC *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PlayMovieVC"];
     monitorMenuViewController.movieId = [self movieId];
     [self presentViewController:monitorMenuViewController animated:NO completion:nil];
+}
+
+- (IBAction)showListEP:(id)sender {
 }
 
 - (IBAction)back:(UIButton *)sender {

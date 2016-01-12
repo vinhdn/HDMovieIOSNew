@@ -307,14 +307,15 @@
 }
 
 - (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(void)viewDidDisappear:(BOOL)animated{
     if(mp != nil){
         [mp stop];
         [mp.view removeFromSuperview];
         mp = nil;
     }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    
 }
 
 - (IBAction)progressChanged:(UISlider*)sender {

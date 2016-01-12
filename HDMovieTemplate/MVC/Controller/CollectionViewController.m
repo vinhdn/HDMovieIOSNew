@@ -9,16 +9,23 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "HeaderCollectionView.h"
+#import "ResultSearchCell.h"
 @import Foundation;
 @interface CollectionViewController ()
 @property (readwrite, nonatomic, strong) NSArray *posts;
 
 @end
 
-@implementation CollectionViewController
+@implementation CollectionViewController{
+    NSURLSessionDataTask *searchManager;
+    NSMutableArray *resultSearch;
+}
 
 static NSString * const reuseIdentifier = @"Cell";
-
+-(void)viewDidAppear:(BOOL)animated{
+    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+}
 - (void)reload:(__unused id)sender {
     self.navigationItem.rightBarButtonItem.enabled = NO;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -87,6 +94,72 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
+#pragma mark <UISearchBarDelegate>
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if(searchText.length > 0){
+        self.resultSearchView.hidden = NO;
+        if(searchManager != nil) [searchManager cancel];
+        searchManager = [ApiConnect search:searchText success:^(NSURLSessionDataTask *mana, id _Nullable success) {
+            resultSearch = [[NSMutableArray alloc] init];
+            NSLog(@"SEARCH RESULT %@", success);
+            NSDictionary *data = [success valueForKeyPath:@"Title"];
+            for (NSDictionary *key in [data allValues]) {
+                
+                Movie *mov = [[Movie alloc] init];
+                mov.MovieID = [key valueForKeyPath:@"MovieID"];
+                mov.MovieName = [key valueForKeyPath:@"MovieName"];
+                mov.Backdrop = [key valueForKeyPath:@"Backdrop"];
+                mov.KnownAs = [key valueForKeyPath:@"KnownAs"];
+                [resultSearch addObject:mov];
+            }
+            [self.tableResultSearch reloadData];
+        } failure:^(NSURLSessionDataTask * _Nullable mana, NSError *error) {
+            NSLog(@"SEARCH ERROR %@", error);
+            resultSearch = [[NSMutableArray alloc] init];
+        }];
+    }
+    else{
+        self.resultSearchView.hidden = YES;
+        [searchBar resignFirstResponder];
+    }
+}
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    self.resultSearchView.hidden = NO;
+    [searchBar resignFirstResponder];
+}
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    self.resultSearchView.hidden = YES;
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+}
+
+#pragma mark <UITableViewDataSource>
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [resultSearch count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ResultSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultSearchCell"];
+    Movie *mov = [resultSearch objectAtIndex:indexPath.row];
+    cell.titleLb.text = mov.MovieName;
+    cell.knowAsLb.text = mov.KnownAs;
+    [cell.imageV setImage:nil];
+    [cell.imageV setImageWithURL:[NSURL URLWithString:mov.Backdrop]];
+    return cell;
+}
+
+#pragma mark <UITableViewDelegate>
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailController *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailController"];
+    Movie *mov = [resultSearch objectAtIndex:indexPath.row];
+    monitorMenuViewController.movieId = [mov MovieID];
+    [self presentViewController:monitorMenuViewController animated:NO completion:nil];
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -107,6 +180,7 @@ static NSString * const reuseIdentifier = @"Cell";
     Categories *cat = [self.listData objectAtIndex:indexPath.section];
     Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
     cell.nameLb.text = [mov KnownAs];
+    [cell.thumbIV setImage:nil];
     [cell.thumbIV setImageWithURL:[NSURL URLWithString:[mov Poster100x149]]];
     return cell;
 }
@@ -131,6 +205,14 @@ static NSString * const reuseIdentifier = @"Cell";
     Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
     monitorMenuViewController.movieId = [mov MovieID];
     [self presentViewController:monitorMenuViewController animated:NO completion:nil];
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    float cellWidth = screenWidth / 3.3;
+    CGSize size = CGSizeMake(cellWidth, cellWidth * 16.0 / 10.0);
+    return size;
 }
 
 /*
