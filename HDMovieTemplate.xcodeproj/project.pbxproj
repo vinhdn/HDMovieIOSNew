@@ -64,7 +64,7 @@
 		33D4CBE31C3F905400F4235C /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		33D4CBE41C3F905400F4235C /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		33D4CBE61C3F906100F4235C /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
-		33D4CBE71C3F906100F4235C /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		33D4CBE71C3F906100F4235C /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = ../MVC/Model/Movie.m; sourceTree = "<group>"; };
 		33D4CBE81C3F906100F4235C /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		33D4CBE91C3F906100F4235C /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
 		33D4CBEC1C40C45400F4235C /* ic_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_play.png; sourceTree = "<group>"; };
@@ -215,6 +215,7 @@
 				33D4CBDF1C3F904300F4235C /* ApiConnect.h */,
 				33D4CBE01C3F904300F4235C /* ApiConnect.m */,
 				33D4CBE21C3F904D00F4235C /* Define.h */,
+				33D4CBE71C3F906100F4235C /* Movie.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -252,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				33D4CBE61C3F906100F4235C /* Movie.h */,
-				33D4CBE71C3F906100F4235C /* Movie.m */,
 				33D4CBE81C3F906100F4235C /* Categories.h */,
 				33D4CBE91C3F906100F4235C /* Categories.m */,
 				A3F604041C40F936003B2950 /* MovePlay.h */,
