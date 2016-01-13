@@ -26,9 +26,9 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.popupController popViewControllerAnimated:YES];
     if ([self.delegate respondsToSelector:@selector(epSelected:didSelectEP:)]) {
         [self.delegate epSelected:self didSelectEP:indexPath.row + 1];
     }
-    [self.popupController popViewControllerAnimated:YES];
 }
 @end

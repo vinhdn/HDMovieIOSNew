@@ -10,6 +10,8 @@
 #import "CollectionViewCell.h"
 #import "HeaderCollectionView.h"
 #import "ResultSearchCell.h"
+#import "TopMovieCell.h"
+
 @import Foundation;
 @interface CollectionViewController ()
 @property (readwrite, nonatomic, strong) NSArray *posts;
@@ -19,6 +21,9 @@
 @implementation CollectionViewController{
     NSURLSessionDataTask *searchManager;
     NSMutableArray *resultSearch;
+    NSMutableArray *headerMovie;
+    CGFloat scrollBefore;
+    CGFloat heightHeader;
 }
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -31,6 +36,9 @@ static NSString * const reuseIdentifier = @"Cell";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:LINK_CONFIG parameters:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        if(self.refreshControl != nil){
+            [self.refreshControl endRefreshing];
+        }
         NSString *llba = [responseObject valueForKeyPath:@"link"];
         [AppDelegate setLink:llba];
         [AppDelegate setSign:[responseObject valueForKeyPath:@"sign"]];
@@ -42,6 +50,14 @@ static NSString * const reuseIdentifier = @"Cell";
                 
             }else{
                 NSDictionary *rr = [dict valueForKeyPath:@"r"];
+                NSArray *movHeader = [rr valueForKeyPath:@"Movies_Banners"];
+                headerMovie = [[NSMutableArray alloc] init];
+                for (NSDictionary *mo in movHeader) {
+                    Movie *moo = [[Movie alloc] initWithDictionary:mo error:nil];
+                    int aValue = [[moo.MovieID stringByReplacingOccurrencesOfString:@" " withString:@""] intValue];
+                    if(aValue >= 0)
+                        [headerMovie addObject:moo];
+                }
                 NSArray *movStr = [rr valueForKeyPath:@"MoviesByCates"];
                 for (NSDictionary* cate in movStr) {
                     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:cate options:NSJSONWritingPrettyPrinted error:nil];
@@ -164,18 +180,37 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
-    return [self.listData count];
+    return [self.listData count] + 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-
-    return [[(Categories *)[self.listData objectAtIndex:section] Movies] count];
+    if(section == 0){
+        return 1;
+    }
+    return [[(Categories *)[self.listData objectAtIndex:section - 1] Movies] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+    if(indexPath.section == 0){
+        TopMovieCell *topCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TopCell" forIndexPath:indexPath];
+        topCell.scrollView.pagingEnabled =true;
+        topCell.scrollView.contentSize = CGSizeMake(topCell.scrollView.bounds.size.width * [headerMovie count], topCell.scrollView.bounds.size.width * 9.0 / 16.0);
+        topCell.scrollView.delegate = topCell;
+        topCell.pageControl.numberOfPages = [headerMovie count];
+        topCell.movies = headerMovie;
+        for (int i = 0; i < [headerMovie count]; i++) {
+            Movie *mov = [headerMovie objectAtIndex:i];
+            UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.frame.size.width * i, 0, self.view.frame.size.width, self.view.frame.size.width * 9.0 / 16.0)];
+            [view setImageWithURL:[NSURL URLWithString:mov.Cover]];
+            [topCell.scrollView addSubview:view];
+        }
+        [topCell initView];
+        topCell.scrollView.userInteractionEnabled = NO;
+        [topCell addGestureRecognizer:topCell.scrollView.panGestureRecognizer];
+        return topCell;
+    }
     // Configure the cell
     Categories *cat = [self.listData objectAtIndex:indexPath.section];
     Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
@@ -185,8 +220,46 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+-(void)headerClicked:(UIScrollView *)sender{
+    
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(scrollView.contentOffset.y < 0){
+        scrollBefore = 0;
+        return;
+    }
+    CGFloat top = scrollBefore - scrollView.contentOffset.y;
+    NSLog(@"Scrolled CollectionView %f", top);
+    if(top <= 0 && self.headerV.layer.position.y <= self.headerV.layer.frame.size.height){
+        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, -self.headerV.layer.frame.size.height);
+        return;
+    }
+    if(top >= 0 && self.headerV.layer.position.y >= 0){
+        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, 0.0);
+        return;
+    }
+    if(self.headerV.layer.position.y > 0){
+        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, 0.0);
+    }else if(self.headerV.layer.position.y < -64){
+        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, -self.headerV.layer.frame.size.height);
+    }else{
+        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, self.headerV.layer.position.y + top);
+    }
+    scrollBefore = scrollView.contentOffset.y;
+}
+
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView *reusableview = nil;
+    if(indexPath.section == 0){
+        if(kind == UICollectionElementKindSectionHeader){
+            HeaderCollectionView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
+            NSString *title = [[NSString alloc]initWithFormat:@"%@", @"TOP"];
+            headerView.headerLb.text = title;
+            reusableview = headerView;
+        }
+        return reusableview;
+    }
     if(kind == UICollectionElementKindSectionHeader){
         HeaderCollectionView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
          NSString *title = [[NSString alloc]initWithFormat:@"%@", [(Categories *)[self.listData objectAtIndex:indexPath.section] CategoryName]];
@@ -198,12 +271,19 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%li/%li",indexPath.section, indexPath.row);
     DetailController *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailController"];
-    Categories *cat = [self.listData objectAtIndex:indexPath.section];
-    Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
-    monitorMenuViewController.movieId = [mov MovieID];
+    if(indexPath.section == 0){
+        TopMovieCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+        Movie *mov = [headerMovie objectAtIndex:cell.pageControl.currentPage];
+        monitorMenuViewController.movieId = [mov MovieID];
+    }else{
+        Categories *cat = [self.listData objectAtIndex:indexPath.section];
+        Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
+        monitorMenuViewController.movieId = [mov MovieID];
+    }
     [self presentViewController:monitorMenuViewController animated:NO completion:nil];
 }
 
@@ -212,7 +292,18 @@ static NSString * const reuseIdentifier = @"Cell";
     CGFloat screenWidth = screenRect.size.width;
     float cellWidth = screenWidth / 3.3;
     CGSize size = CGSizeMake(cellWidth, cellWidth * 16.0 / 10.0);
+    if (indexPath.section == 0) {
+        size = CGSizeMake(screenWidth, screenWidth * 9.0 / 16.0);
+    }
     return size;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if(section == 0){
+        return CGSizeZero;
+    }else{
+        return CGSizeMake(CGRectGetWidth(collectionView.bounds), 50);
+    }
 }
 
 /*

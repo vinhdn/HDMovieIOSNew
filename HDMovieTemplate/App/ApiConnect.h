@@ -20,7 +20,7 @@
                               progress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgress
                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
-+(NSURLSessionDataTask *)getVideoPlay:(NSString*) movieId success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure;
++(NSURLSessionDataTask *)getVideoPlay:(NSString*) movieId ep:(NSInteger)ep success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure;
 +(AFHTTPRequestOperation *)getSub:(NSString*) url success:(void (^)(AFHTTPRequestOperation *, id _Nullable))success failure:(void (^)(AFHTTPRequestOperation * _Nullable, NSError *))failure;
 +(NSURLSessionDataTask *)search:(NSString*) key success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure;
 +(NSString*)getSu:api params:(NSMutableDictionary*)params;

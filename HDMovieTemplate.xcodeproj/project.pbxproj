@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334E1E821C462C070099299C /* TopMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1E811C462C070099299C /* TopMovieCell.m */; };
 		33D4CBD81C3F902800F4235C /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBD71C3F902800F4235C /* CollectionViewController.m */; };
 		33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDA1C3F903500F4235C /* CollectionViewCell.m */; };
 		33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDC1C3F903500F4235C /* HeaderCollectionView.m */; };
@@ -52,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		334E1E801C462C070099299C /* TopMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMovieCell.h; sourceTree = "<group>"; };
+		334E1E811C462C070099299C /* TopMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMovieCell.m; sourceTree = "<group>"; };
 		33D4CBD61C3F902000F4235C /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		33D4CBD71C3F902800F4235C /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		33D4CBD91C3F903500F4235C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				33D4CC0C1C449FC100F4235C /* ResultSearchCell.m */,
 				33D4CC131C44F40D00F4235C /* EPCell.h */,
 				33D4CC141C44F40D00F4235C /* EPCell.m */,
+				334E1E801C462C070099299C /* TopMovieCell.h */,
+				334E1E811C462C070099299C /* TopMovieCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D4CBD81C3F902800F4235C /* CollectionViewController.m in Sources */,
+				334E1E821C462C070099299C /* TopMovieCell.m in Sources */,
 				33D4CBFD1C438FE600F4235C /* SelectionQualityVC.m in Sources */,
 				33D4CBE11C3F904300F4235C /* ApiConnect.m in Sources */,
 				33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */,

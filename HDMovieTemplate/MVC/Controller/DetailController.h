@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *thumb02IV;
 @property (weak, nonatomic) IBOutlet UILabel *titleLb;
 @property (weak, nonatomic) IBOutlet UILabel *engLb;
+@property (weak, nonatomic) IBOutlet UIButton *moreBtn;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *viLB;
 - (IBAction)moreDetail:(id)sender;

@@ -17,8 +17,10 @@
 @interface CollectionViewController : UIViewController<UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *resultSearchView;
+@property (weak, nonatomic) IBOutlet UIView *headerV;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableResultSearch;
 @property (nonatomic, strong, nullable) UIRefreshControl *refreshControl ;
 @property (nonatomic,strong,nullable) NSMutableArray * listData;
+- (IBAction)headerClicked:(UIScrollView *)sender;
 @end

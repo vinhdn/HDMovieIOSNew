@@ -78,7 +78,8 @@
                         self.engLb.text = self.movie.MovieName;
                         self.titleLb.text = self.movie.MovieName;
                         self.viLB.text = self.movie.KnownAs;
-                        self.desLb.text = self.movie.PlotVI;
+                        NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[[NSString stringWithFormat:@"<div style='text-align:justify; font-size:16px;font-family:HelveticaNeue;color:#362932;'>%@</div>", self.movie.PlotVI] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+                        self.desLb.attributedText = attrStr;
                     }
                 }
 
@@ -90,9 +91,11 @@
 - (IBAction)moreDetail:(UIButton *)sender {
     if(self.desLb.numberOfLines > 0){
         self.desLb.numberOfLines = 0;
+        [self.moreBtn setTitle:@"ẨN" forState:UIControlStateNormal];
     }
     else{
         self.desLb.numberOfLines = 3;
+        [self.moreBtn setTitle:@"XEM THÊM" forState:UIControlStateNormal];
     }
     CGRect contentRect = CGRectZero;
     for (UIView *view in self.scrollView.subviews) {
@@ -100,5 +103,7 @@
     }
     self.scrollView.contentSize = contentRect.size;
 }
-
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    NSLog(@"%ld", fromInterfaceOrientation);
+}
 @end

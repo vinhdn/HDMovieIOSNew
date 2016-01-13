@@ -59,8 +59,8 @@
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     return [manager GET:[NSString stringWithFormat:@"%@/%@", [AppDelegate appLink], HOMEPAGE] parameters:parameters success:success failure:failure];
 }
-+(NSURLSessionDataTask *)getVideoPlay:(NSString*) movieId success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure{
-    NSDictionary *parameters = @{@"sign": [AppDelegate appSign], @"movieId" : movieId};
++(NSURLSessionDataTask *)getVideoPlay:(NSString*)movieId ep:(NSInteger)ep success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure{
+    NSDictionary *parameters = @{@"sign": [AppDelegate appSign], @"movieId" : movieId, @"ep": [NSString stringWithFormat:@"%li",ep]};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSMutableString *url = [[NSMutableString alloc] init];
     [url appendString: [AppDelegate appLink]];

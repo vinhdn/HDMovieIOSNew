@@ -93,7 +93,7 @@
 }
 -(void)viewDidLoad{
     mCurrentSub = 0;
-    [ApiConnect getVideoPlay:[self movieId] success:^(NSURLSessionDataTask * dd, id _Nullable response) {
+    [ApiConnect getVideoPlay:[self movieId] ep:[self ep] success:^(NSURLSessionDataTask * dd, id _Nullable response) {
         NSLog(@"JSON %@", response);
         NSDictionary* data = [response valueForKeyPath:@"r"];
         movie = [[MovePlay alloc] initWithDictionary:data error:nil];
@@ -111,7 +111,7 @@
         NSString *replace = @"%@_320_2000";
         for (int i = 0; i < [matches count]; i++) {
             NSTextCheckingResult *match = [matches objectAtIndex:i];
-            NSRange matchRange = [match range];
+
             NSInteger numRange = [match numberOfRanges];
             if(numRange > 1){
                 NSRange firstHalfRange = [match rangeAtIndex:1];
@@ -138,10 +138,9 @@
             NSArray *matches = [regex02 matchesInString:resulotion
                                               options:0
                                                 range:NSMakeRange(0, [resulotion length])];
-            for (int i = ([matches count] - 1); i >= 0; i--) {
+            for (long i = ([matches count] - 1); i >= 0; i--) {
                 NSTextCheckingResult *match = [matches objectAtIndex:i];
                 NSRange matchRange = [match range];
-                NSString *resu = [resulotion substringWithRange:matchRange];
                 NSRange firstHalfRange = [match rangeAtIndex:1];
                 NSRange secondHalfRange = [match rangeAtIndex:3];
                 NSString *resu02 = @"";
@@ -345,12 +344,14 @@
 }
 
 -(void)hiddenView{
+    if(self.progressV.isTouchInside)
+        return;
     self.headerV.hidden = YES;
     self.controlV.hidden = YES;
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft; // or Right of course
+    return UIInterfaceOrientationLandscapeRight; // or Right of course
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
