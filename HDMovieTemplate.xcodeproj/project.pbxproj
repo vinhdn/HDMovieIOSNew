@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		334E1E821C462C070099299C /* TopMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1E811C462C070099299C /* TopMovieCell.m */; };
+		334E1E851C48DC850099299C /* CellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334E1E841C48DC850099299C /* CellSwift.swift */; };
 		33D4CBD81C3F902800F4235C /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBD71C3F902800F4235C /* CollectionViewController.m */; };
 		33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDA1C3F903500F4235C /* CollectionViewCell.m */; };
 		33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDC1C3F903500F4235C /* HeaderCollectionView.m */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		334E1E801C462C070099299C /* TopMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMovieCell.h; sourceTree = "<group>"; };
 		334E1E811C462C070099299C /* TopMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMovieCell.m; sourceTree = "<group>"; };
+		334E1E831C48DC850099299C /* HDMovieTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HDMovieTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
+		334E1E841C48DC850099299C /* CellSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSwift.swift; sourceTree = "<group>"; };
 		33D4CBD61C3F902000F4235C /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		33D4CBD71C3F902800F4235C /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		33D4CBD91C3F903500F4235C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 				33D4CC141C44F40D00F4235C /* EPCell.m */,
 				334E1E801C462C070099299C /* TopMovieCell.h */,
 				334E1E811C462C070099299C /* TopMovieCell.m */,
+				334E1E841C48DC850099299C /* CellSwift.swift */,
+				334E1E831C48DC850099299C /* HDMovieTemplate-Bridging-Header.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				A3F604101C417C45003B2950 /* SubTitle.m in Sources */,
 				A3F604061C40F936003B2950 /* MovePlay.m in Sources */,
 				A3F6040A1C410479003B2950 /* MPMoviePlayerController+Subtitles.m in Sources */,
+				334E1E851C48DC850099299C /* CellSwift.swift in Sources */,
 				33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */,
 				33D4CBEA1C3F906100F4235C /* Movie.m in Sources */,
 				A3F6040D1C41151F003B2950 /* Sub.m in Sources */,
@@ -608,6 +614,7 @@
 			baseConfigurationReference = 4D8FCBC5ADA7469B673095B6 /* Pods-HDMovieTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HDMovieTemplate/Info.plist;
@@ -616,6 +623,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhdn.HDMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HDMovieTemplate/MVC/View/HDMovieTemplate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -625,6 +634,7 @@
 			baseConfigurationReference = 4F8EAB40D8B7503DCAEC84C3 /* Pods-HDMovieTemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HDMovieTemplate/Info.plist;
@@ -633,6 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhdn.HDMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HDMovieTemplate/MVC/View/HDMovieTemplate-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
