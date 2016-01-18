@@ -212,7 +212,7 @@ static NSString * const reuseIdentifier = @"Cell";
         return topCell;
     }
     // Configure the cell
-    Categories *cat = [self.listData objectAtIndex:indexPath.section];
+    Categories *cat = [self.listData objectAtIndex:indexPath.section - 1];
     Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
     cell.nameLb.text = [mov KnownAs];
     [cell.thumbIV setImage:nil];
@@ -225,28 +225,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if(scrollView.contentOffset.y < 0){
-        scrollBefore = 0;
-        return;
-    }
-    CGFloat top = scrollBefore - scrollView.contentOffset.y;
-    NSLog(@"Scrolled CollectionView %f", top);
-    if(top <= 0 && self.headerV.layer.position.y <= self.headerV.layer.frame.size.height){
-        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, -self.headerV.layer.frame.size.height);
-        return;
-    }
-    if(top >= 0 && self.headerV.layer.position.y >= 0){
-        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, 0.0);
-        return;
-    }
-    if(self.headerV.layer.position.y > 0){
-        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, 0.0);
-    }else if(self.headerV.layer.position.y < -64){
-        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, -self.headerV.layer.frame.size.height);
-    }else{
-        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, self.headerV.layer.position.y + top);
-    }
-    scrollBefore = scrollView.contentOffset.y;
+    
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -262,7 +241,7 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     if(kind == UICollectionElementKindSectionHeader){
         HeaderCollectionView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
-         NSString *title = [[NSString alloc]initWithFormat:@"%@", [(Categories *)[self.listData objectAtIndex:indexPath.section] CategoryName]];
+         NSString *title = [[NSString alloc]initWithFormat:@"%@", [(Categories *)[self.listData objectAtIndex:indexPath.section - 1] CategoryName]];
         headerView.headerLb.text = title;
         reusableview = headerView;
     }
@@ -280,7 +259,7 @@ static NSString * const reuseIdentifier = @"Cell";
         Movie *mov = [headerMovie objectAtIndex:cell.pageControl.currentPage];
         monitorMenuViewController.movieId = [mov MovieID];
     }else{
-        Categories *cat = [self.listData objectAtIndex:indexPath.section];
+        Categories *cat = [self.listData objectAtIndex:indexPath.section - 1];
         Movie *mov = [cat.Movies objectAtIndex:indexPath.row];
         monitorMenuViewController.movieId = [mov MovieID];
     }
