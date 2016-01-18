@@ -14,6 +14,7 @@
 
 static NSString *API_LINK;
 static NSString *SIGN;
+static NSMutableArray * CATEGORIES;
 
 @implementation AppDelegate
 
@@ -31,6 +32,14 @@ static NSString *SIGN;
 
 +(void) setSign:(NSString *) link{
     SIGN = link;
+}
+
++(NSMutableArray *) appCategories{
+    return CATEGORIES;
+}
+
++(void) setCategories:(NSMutableArray *)cates{
+    CATEGORIES = cates;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

@@ -228,6 +228,15 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+- (IBAction)menuClick:(UIButton *)sender {
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+}
+
 -(void)headerClicked:(UIScrollView *)sender{
     
 }
