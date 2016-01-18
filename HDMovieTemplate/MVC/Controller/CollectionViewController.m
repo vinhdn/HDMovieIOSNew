@@ -140,15 +140,23 @@ static NSString * const reuseIdentifier = @"Cell";
         [searchBar resignFirstResponder];
     }
 }
+-(BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    return YES;
+}
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+//    [searchBar becomeFirstResponder];
+    return YES;
+}
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     self.resultSearchView.hidden = NO;
-    [searchBar resignFirstResponder];
+//    [searchBar becomeFirstResponder];
 }
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     self.resultSearchView.hidden = YES;
+    [searchBar resignFirstResponder];
 }
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [searchBar resignFirstResponder];
+    
 }
 
 #pragma mark <UITableViewDataSource>
@@ -220,12 +228,42 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+- (IBAction)menuClick:(UIButton *)sender {
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+}
+
 -(void)headerClicked:(UIScrollView *)sender{
     
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+//    if(scrollView.contentOffset.y < 0){
+//        scrollBefore = 0;
+//        return;
+//    }
+//    CGFloat top = scrollBefore - scrollView.contentOffset.y;
+//    NSLog(@"Scrolled CollectionView %f", top);
+//    if(top <= 0 && self.headerV.layer.position.y <= self.headerV.layer.frame.size.height){
+//        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, -self.headerV.layer.frame.size.height);
+//        return;
+//    }
+//    if(top >= 0 && self.headerV.layer.position.y >= 0){
+//        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, 0.0);
+//        return;
+//    }
+//    if(self.headerV.layer.position.y > 0){
+//        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, 0.0);
+//    }else if(self.headerV.layer.position.y < -64){
+//        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, -self.headerV.layer.frame.size.height);
+//    }else{
+//        self.headerV.layer.position = CGPointMake(self.headerV.layer.position.x, self.headerV.layer.position.y + top);
+//    }
+//    scrollBefore = scrollView.contentOffset.y;
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

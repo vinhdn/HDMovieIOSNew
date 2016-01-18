@@ -15,6 +15,8 @@
 +(void) setLink: (NSString *) link;
 +(NSString *) appSign;
 +(void) setSign: (NSString *) link;
++(NSMutableArray *) appCategories;
++(void) setCategories: (NSMutableArray *) cates;
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

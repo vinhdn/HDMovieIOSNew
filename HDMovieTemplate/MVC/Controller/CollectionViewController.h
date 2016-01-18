@@ -12,6 +12,8 @@
 #import "Categories.h"
 #import "Movie.h"
 #import "DetailController.h"
+#import <REFrostedViewController.h>
+
 @import Foundation;
 
 @interface CollectionViewController : UIViewController<UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
@@ -22,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableResultSearch;
 @property (nonatomic, strong, nullable) UIRefreshControl *refreshControl ;
 @property (nonatomic,strong,nullable) NSMutableArray * listData;
+- (IBAction)menuClick:(UIButton *)sender;
 - (IBAction)headerClicked:(UIScrollView *)sender;
 @end
