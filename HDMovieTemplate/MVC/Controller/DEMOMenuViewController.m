@@ -9,6 +9,10 @@
 #import "DEMOMenuViewController.h"
 #import "REFrostedViewController.h"
 #import "AppDelegate.h"
+#import "ApiConnect.h"
+#import "Categories.h"
+#import "CategoryVC.h"
+#import "DEMONavigationController.h"
 
 @interface DEMOMenuViewController ()
 
@@ -19,9 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if([AppDelegate appCategories] == nil){
-        
-    }
+    [self loadCategories];
     
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
@@ -53,6 +55,22 @@
         [view addSubview:label];
         view;
     });
+}
+
+-(void)loadCategories{
+    if([AppDelegate appCategories] == nil && [AppDelegate appLink] != nil){
+        [ApiConnect getCategories:^(NSURLSessionDataTask * session, id _Nullable response) {
+            NSLog(@"GetCategories RESPONSE %@", response);
+            NSMutableArray *cates = [[NSMutableArray alloc] init];
+            for (NSDictionary *cat in [response valueForKeyPath:@"r"]) {
+                Categories *cate = [[Categories alloc] initWithDictionary:cat error:nil];
+                [cates addObject:cate];
+            }
+            [AppDelegate setCategories:cates];
+        } failure:^(NSURLSessionDataTask * _Nullable session, NSError *error) {
+            NSLog(@"GetCategories ERROR %@", error);
+        }];
+    }
 }
 
 #pragma mark -
@@ -94,6 +112,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DEMONavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
+    CategoryVC *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoryVC"];
+    navigationController.viewControllers = @[homeViewController];
     [self.frostedViewController hideMenuViewController];
 }
 
@@ -107,12 +129,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 3;
+    return [[AppDelegate appCategories] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -126,8 +148,8 @@
     }
     
     if (indexPath.section == 0) {
-        NSArray *titles = @[@"Home", @"Profile", @"Chats"];
-        cell.textLabel.text = titles[indexPath.row];
+        Categories *cate = [[AppDelegate appCategories] objectAtIndex:indexPath.row];
+        cell.textLabel.text = [[cate CategoryName] stringByReplacingOccurrencesOfString:@"HDViệt" withString:@"HDMovie"];
     } else {
         NSArray *titles = @[@"John Appleseed", @"John Doe", @"Test User"];
         cell.textLabel.text = titles[indexPath.row];

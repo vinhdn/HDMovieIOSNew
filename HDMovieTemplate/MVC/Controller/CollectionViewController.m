@@ -11,6 +11,7 @@
 #import "HeaderCollectionView.h"
 #import "ResultSearchCell.h"
 #import "TopMovieCell.h"
+#import "DEMOMenuViewController.h"
 
 @import Foundation;
 @interface CollectionViewController ()
@@ -42,6 +43,8 @@ static NSString * const reuseIdentifier = @"Cell";
         NSString *llba = [responseObject valueForKeyPath:@"link"];
         [AppDelegate setLink:llba];
         [AppDelegate setSign:[responseObject valueForKeyPath:@"sign"]];
+        DEMOMenuViewController *menuVC = self.frostedViewController.menuViewController;
+        [menuVC loadCategories];
         NSDictionary *parameters = @{@"sign": [AppDelegate appSign]};
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *dict= [ApiConnect sendRequest:HOMEPAGE method:@"GET" params:parameters];
@@ -279,7 +282,7 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     if(kind == UICollectionElementKindSectionHeader){
         HeaderCollectionView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
-         NSString *title = [[NSString alloc]initWithFormat:@"%@", [(Categories *)[self.listData objectAtIndex:indexPath.section - 1] CategoryName]];
+         NSString *title = [[(Categories *)[self.listData objectAtIndex:indexPath.section - 1] CategoryName] stringByReplacingOccurrencesOfString:@"HDViệt" withString:@"HDMovie"];
         headerView.headerLb.text = title;
         reusableview = headerView;
     }

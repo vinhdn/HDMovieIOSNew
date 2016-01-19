@@ -15,4 +15,5 @@
 #define VIDEO_PLAY_URL                     @"movie/play"
 #define VIDEO_DETAIL_URL                     @"movie"
 #define SEARCH_URL                     @"movie/search"
+#define CATEGORIES_URL                  @"category/menu"
 #endif /* Define_h */

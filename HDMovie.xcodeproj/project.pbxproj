@@ -16,6 +16,8 @@
 		334E1EF91C4CEE0D0099299C /* libSTPopup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E1EF51C4CEE0D0099299C /* libSTPopup.a */; };
 		334E1EFA1C4CEE0D0099299C /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E1EF61C4CEE0D0099299C /* libSVProgressHUD.a */; };
 		334E1F001C4DCC8F0099299C /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1EFF1C4DCC8F0099299C /* DEMORootViewController.m */; };
+		334E1F031C4E46720099299C /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1F021C4E46720099299C /* CategoryVC.m */; };
+		334E1F061C4E4CE00099299C /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1F051C4E4CE00099299C /* DEMONavigationController.m */; };
 		33D4CBD81C3F902800F4235C /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBD71C3F902800F4235C /* CollectionViewController.m */; };
 		33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDA1C3F903500F4235C /* CollectionViewCell.m */; };
 		33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDC1C3F903500F4235C /* HeaderCollectionView.m */; };
@@ -76,6 +78,10 @@
 		334E1EF61C4CEE0D0099299C /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "Pods/../build/Debug-iphoneos/libSVProgressHUD.a"; sourceTree = "<group>"; };
 		334E1EFE1C4DCC8F0099299C /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
 		334E1EFF1C4DCC8F0099299C /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
+		334E1F011C4E46720099299C /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
+		334E1F021C4E46720099299C /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
+		334E1F041C4E4CE00099299C /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMONavigationController.h; sourceTree = "<group>"; };
+		334E1F051C4E4CE00099299C /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMONavigationController.m; sourceTree = "<group>"; };
 		33D4CBD61C3F902000F4235C /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		33D4CBD71C3F902800F4235C /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		33D4CBD91C3F903500F4235C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 		DE7BC52A1C3F8C3C00D58031 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				334E1F041C4E4CE00099299C /* DEMONavigationController.h */,
+				334E1F051C4E4CE00099299C /* DEMONavigationController.m */,
 				334E1EFE1C4DCC8F0099299C /* DEMORootViewController.h */,
 				334E1EFF1C4DCC8F0099299C /* DEMORootViewController.m */,
 				334E1ECD1C4CE92F0099299C /* DEMOMenuViewController.h */,
@@ -286,6 +294,8 @@
 				33D4CC041C43B2FD00F4235C /* SelectSubQC.m */,
 				33D4CC101C44F31700F4235C /* ListEpVC.h */,
 				33D4CC111C44F31700F4235C /* ListEpVC.m */,
+				334E1F011C4E46720099299C /* CategoryVC.h */,
+				334E1F021C4E46720099299C /* CategoryVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -522,6 +532,7 @@
 				33D4CC081C43B37000F4235C /* SelectionSubCell.m in Sources */,
 				33D4CBEB1C3F906100F4235C /* Categories.m in Sources */,
 				33D4CC151C44F40D00F4235C /* EPCell.m in Sources */,
+				334E1F031C4E46720099299C /* CategoryVC.m in Sources */,
 				33D4CC001C439B0700F4235C /* SelectionCell.m in Sources */,
 				334E1ECF1C4CE92F0099299C /* DEMOMenuViewController.m in Sources */,
 				DE7BC5181C3F89BD00D58031 /* HDMovieTemplate.xcdatamodeld in Sources */,
@@ -534,6 +545,7 @@
 				33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */,
 				33D4CBEA1C3F906100F4235C /* Movie.m in Sources */,
 				A3F6040D1C41151F003B2950 /* Sub.m in Sources */,
+				334E1F061C4E4CE00099299C /* DEMONavigationController.m in Sources */,
 				DE7BC50C1C3F89BD00D58031 /* main.m in Sources */,
 				DE7BC5331C3F8C3C00D58031 /* AppDelegate.m in Sources */,
 				33D4CC121C44F31700F4235C /* ListEpVC.m in Sources */,

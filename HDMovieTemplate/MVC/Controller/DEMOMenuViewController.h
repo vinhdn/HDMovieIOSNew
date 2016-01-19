@@ -4,5 +4,5 @@
 #import "REFrostedViewController.h"
 
 @interface DEMOMenuViewController : UITableViewController
-
+-(void) loadCategories;
 @end

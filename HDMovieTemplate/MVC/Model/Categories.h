@@ -14,5 +14,5 @@
 @interface Categories : JSONModel
 @property (assign, nonatomic) int CategoryID;
 @property (strong, nonatomic) NSString<Optional>* CategoryName;
-@property (strong, nonatomic) NSArray<Movie>* Movies;
+@property (strong, nonatomic) NSArray<Movie, Optional>* Movies;
 @end
