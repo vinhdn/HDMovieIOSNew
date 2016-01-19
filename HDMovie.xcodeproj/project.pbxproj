@@ -15,7 +15,7 @@
 		334E1EF81C4CEE0D0099299C /* libJSONModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E1EF41C4CEE0D0099299C /* libJSONModel.a */; };
 		334E1EF91C4CEE0D0099299C /* libSTPopup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E1EF51C4CEE0D0099299C /* libSTPopup.a */; };
 		334E1EFA1C4CEE0D0099299C /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E1EF61C4CEE0D0099299C /* libSVProgressHUD.a */; };
-		334E1EFD1C4CF2B40099299C /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1EFC1C4CF2B40099299C /* DEMORootViewController.m */; };
+		334E1F001C4DCC8F0099299C /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1EFF1C4DCC8F0099299C /* DEMORootViewController.m */; };
 		33D4CBD81C3F902800F4235C /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBD71C3F902800F4235C /* CollectionViewController.m */; };
 		33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDA1C3F903500F4235C /* CollectionViewCell.m */; };
 		33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4CBDC1C3F903500F4235C /* HeaderCollectionView.m */; };
@@ -74,8 +74,8 @@
 		334E1EF41C4CEE0D0099299C /* libJSONModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJSONModel.a; path = "Pods/../build/Debug-iphoneos/libJSONModel.a"; sourceTree = "<group>"; };
 		334E1EF51C4CEE0D0099299C /* libSTPopup.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSTPopup.a; path = "Pods/../build/Debug-iphoneos/libSTPopup.a"; sourceTree = "<group>"; };
 		334E1EF61C4CEE0D0099299C /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "Pods/../build/Debug-iphoneos/libSVProgressHUD.a"; sourceTree = "<group>"; };
-		334E1EFB1C4CF2B40099299C /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMORootViewController.h; path = "../../../../REFrostedViewController-master/Examples/Storyboards/REFrostedViewControllerStoryboards/DEMORootViewController.h"; sourceTree = "<group>"; };
-		334E1EFC1C4CF2B40099299C /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMORootViewController.m; path = "../../../../REFrostedViewController-master/Examples/Storyboards/REFrostedViewControllerStoryboards/DEMORootViewController.m"; sourceTree = "<group>"; };
+		334E1EFE1C4DCC8F0099299C /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
+		334E1EFF1C4DCC8F0099299C /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
 		33D4CBD61C3F902000F4235C /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		33D4CBD71C3F902800F4235C /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		33D4CBD91C3F903500F4235C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -270,8 +270,8 @@
 		DE7BC52A1C3F8C3C00D58031 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				334E1EFB1C4CF2B40099299C /* DEMORootViewController.h */,
-				334E1EFC1C4CF2B40099299C /* DEMORootViewController.m */,
+				334E1EFE1C4DCC8F0099299C /* DEMORootViewController.h */,
+				334E1EFF1C4DCC8F0099299C /* DEMORootViewController.m */,
 				334E1ECD1C4CE92F0099299C /* DEMOMenuViewController.h */,
 				334E1ECE1C4CE92F0099299C /* DEMOMenuViewController.m */,
 				33D4CBD61C3F902000F4235C /* CollectionViewController.h */,
@@ -515,6 +515,7 @@
 				334E1E821C462C070099299C /* TopMovieCell.m in Sources */,
 				33D4CBFD1C438FE600F4235C /* SelectionQualityVC.m in Sources */,
 				33D4CBE11C3F904300F4235C /* ApiConnect.m in Sources */,
+				334E1F001C4DCC8F0099299C /* DEMORootViewController.m in Sources */,
 				33D4CBDD1C3F903500F4235C /* CollectionViewCell.m in Sources */,
 				33D4CBF61C43517E00F4235C /* Resolution.m in Sources */,
 				33D4CBF31C43467500F4235C /* Utils.m in Sources */,
@@ -530,7 +531,6 @@
 				A3F604061C40F936003B2950 /* MovePlay.m in Sources */,
 				A3F6040A1C410479003B2950 /* MPMoviePlayerController+Subtitles.m in Sources */,
 				334E1E851C48DC850099299C /* CellSwift.swift in Sources */,
-				334E1EFD1C4CF2B40099299C /* DEMORootViewController.m in Sources */,
 				33D4CBDE1C3F903500F4235C /* HeaderCollectionView.m in Sources */,
 				33D4CBEA1C3F906100F4235C /* Movie.m in Sources */,
 				A3F6040D1C41151F003B2950 /* Sub.m in Sources */,
