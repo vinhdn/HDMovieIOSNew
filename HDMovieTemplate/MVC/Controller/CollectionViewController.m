@@ -136,10 +136,13 @@ static NSString * const reuseIdentifier = @"Cell";
         } failure:^(NSURLSessionDataTask * _Nullable mana, NSError *error) {
             NSLog(@"SEARCH ERROR %@", error);
             resultSearch = [[NSMutableArray alloc] init];
+            [self.tableResultSearch reloadData];
         }];
     }
     else{
         self.resultSearchView.hidden = YES;
+        resultSearch = [[NSMutableArray alloc] init];
+        [self.tableResultSearch reloadData];
         [searchBar resignFirstResponder];
     }
 }
@@ -151,7 +154,6 @@ static NSString * const reuseIdentifier = @"Cell";
     return YES;
 }
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    self.resultSearchView.hidden = NO;
 //    [searchBar becomeFirstResponder];
 }
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
@@ -159,7 +161,18 @@ static NSString * const reuseIdentifier = @"Cell";
     [searchBar resignFirstResponder];
 }
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    
+    resultSearch = [[NSMutableArray alloc] init];
+    [self.tableResultSearch reloadData];
+    self.resultSearchView.hidden = YES;
+    [searchBar resignFirstResponder];
+}
+
+-(BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
+    self.resultSearchView.hidden = YES;
+    resultSearch = [[NSMutableArray alloc] init];
+    [self.tableResultSearch reloadData];
+    [searchBar resignFirstResponder];
+    return NO;
 }
 
 #pragma mark <UITableViewDataSource>
@@ -184,7 +197,7 @@ static NSString * const reuseIdentifier = @"Cell";
     DetailController *monitorMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailController"];
     Movie *mov = [resultSearch objectAtIndex:indexPath.row];
     monitorMenuViewController.movieId = [mov MovieID];
-    [self presentViewController:monitorMenuViewController animated:NO completion:nil];
+    [self presentViewController:monitorMenuViewController animated:YES completion:nil];
 }
 
 #pragma mark <UICollectionViewDataSource>

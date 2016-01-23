@@ -12,7 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "EPCell.h"
 
-@interface DetailController : UIViewController
+@interface DetailController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *thumbIV;
 @property (weak, nonatomic) IBOutlet UIImageView *thumb02IV;
 @property (weak, nonatomic) IBOutlet UILabel *titleLb;
@@ -23,6 +23,9 @@
 - (IBAction)moreDetail:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *desLb;
 @property (weak, nonatomic) IBOutlet UIView *bgThumbV;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewHieghtContrant;
+@property (weak, nonatomic) IBOutlet UIView *rootView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 - (IBAction)play:(UIButton *)sender;
 - (IBAction)showListEP:(id)sender;
 - (IBAction)back:(UIButton *)sender;

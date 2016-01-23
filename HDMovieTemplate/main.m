@@ -2,8 +2,8 @@
 //  main.m
 //  HDMovieTemplate
 //
-//  Created by Tinhvv on 1/8/16.
-//  Copyright © 2016 Tinhvv. All rights reserved.
+//  Created by VinhDN on 1/8/16.
+//  Copyright © 2016 VinhDN. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

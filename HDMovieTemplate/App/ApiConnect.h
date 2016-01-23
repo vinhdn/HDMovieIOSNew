@@ -24,6 +24,7 @@
 +(AFHTTPRequestOperation *)getSub:(NSString*) url success:(void (^)(AFHTTPRequestOperation *, id _Nullable))success failure:(void (^)(AFHTTPRequestOperation * _Nullable, NSError *))failure;
 +(NSURLSessionDataTask *)search:(NSString*) key success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure;
 +(NSURLSessionDataTask *)getCategories:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure;
++(NSURLSessionDataTask *)getMoviesOfCategory:(NSInteger) cateID offset:(NSInteger) offset success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure;
 +(NSString*)getSu:api params:(NSMutableDictionary*)params;
 +(NSString*)getQuality:url;
 @end

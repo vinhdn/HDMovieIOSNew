@@ -1,10 +1,4 @@
-//
-//  DEMOMenuViewController.m
-//  REFrostedViewControllerStoryboards
-//
-//  Created by Roman Efimov on 10/9/13.
-//  Copyright (c) 2013 Roman Efimov. All rights reserved.
-//
+
 
 #import "DEMOMenuViewController.h"
 #import "REFrostedViewController.h"
@@ -44,7 +38,7 @@
         imageView.clipsToBounds = YES;
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
-        label.text = @"Roman Efimov";
+        label.text = @"HDMovie";
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
@@ -113,10 +107,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    DEMONavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
-    CategoryVC *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoryVC"];
-    navigationController.viewControllers = @[homeViewController];
+    CategoryVC *cateController = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoryVC"];
+    Categories *cate = [[AppDelegate appCategories] objectAtIndex:indexPath.row];
+    cateController.cateID = cate.CategoryID.integerValue;
     [self.frostedViewController hideMenuViewController];
+    [self presentViewController:cateController animated:YES completion:nil];
 }
 
 #pragma mark -

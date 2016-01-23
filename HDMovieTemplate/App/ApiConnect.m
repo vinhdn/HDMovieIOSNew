@@ -139,4 +139,16 @@
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/javascript"];
     return [manager GET:urll parameters:nil success:success failure:failure];
 }
++(NSURLSessionDataTask *)getMoviesOfCategory:(NSInteger)cateID offset:(NSInteger)offset success:(void (^)(NSURLSessionDataTask *, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError *))failure{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableString *urll = [[NSMutableString alloc] init];
+    [urll appendString: [AppDelegate appLink]];
+    [urll appendString: @"/"];
+    [urll appendString: VIDEO_DETAIL_URL];
+    NSDictionary *parameters = @{@"categoryId" : [NSString stringWithFormat:@"%i", cateID], @"offset":[NSString stringWithFormat:@"%i", offset]};
+    manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/javascript"];
+    return [manager GET:urll parameters:parameters success:success failure:failure];
+}
 @end

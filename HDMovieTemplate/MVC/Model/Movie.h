@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "JSONModel.h"
+@protocol Movie
+@end
 @interface Movie : JSONModel
 
 @property (strong, nonatomic) NSString* MovieID;
-@property (strong, nonatomic) NSString* MovieName;
+@property (strong, nonatomic) NSString<Optional>* MovieName;
 @property (strong, nonatomic) NSString<Optional>* CategoryName;
 @property (strong, nonatomic) NSString<Optional>* Cover;
 @property (strong, nonatomic) NSString<Optional>* Link;
@@ -22,4 +24,5 @@
 @property (strong, nonatomic) NSString<Optional>* PlotEN;
 @property (strong, nonatomic) NSString<Optional>* Backdrop;
 @property (assign, nonatomic) NSInteger Sequence;
+@property (strong, nonatomic) NSArray<Movie, Optional>* Relative;
 @end
