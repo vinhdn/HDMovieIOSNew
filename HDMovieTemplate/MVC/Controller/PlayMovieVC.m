@@ -39,6 +39,7 @@
         movie.LinkPlay = [res.url stringByReplacingOccurrencesOfString:@"\n" withString:@""];;
     }
     NSURL *movieURL = [NSURL URLWithString:[movie LinkPlay]];
+//    NSURL *movieURL = [NSURL URLWithString:@"http://hlscache.fptplay.net.vn/livek/vtv3hd_hls.smil/chunklist_b2500000.m3u8?token=eyJoYXNoX3ZhbHVlIjogIjU0NTBhY2Y3NzBiOWZjYjg2NTFjMzYyMmIyOWMzNjVhIiwgInNlcnZlcl90aW1lIjogMTQ1Mzg3Mzk4MCwgImNoYW5uZWxfaWQiOiAidnR2MyIsICJ2YWxpZF9taW51dGVzIjogMTQ0MH0"];
     [mp setContentURL:movieURL];
     if(mp != nil){
         [mp play];
