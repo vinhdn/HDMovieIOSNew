@@ -195,7 +195,10 @@
             [self.topV addGestureRecognizer:singleFingerTap];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(movie.SubtitleExt.VIE != nil){
-                    movie.SubtitleExt.VIE.Content = [ApiConnect getSu:movie.SubtitleExt.VIE.Source params:nil];
+                    NSString *subFix = @"http://188.166.251.228/The_Martian_VI.srt";
+//                    movie.SubtitleExt.VIE.Content = [ApiConnect getSu:movie.SubtitleExt.VIE.Source params:nil];
+                    movie.SubtitleExt.VIE.Content = [ApiConnect getSu:subFix params:nil];
+                    
                 }
                 if(movie.SubtitleExt.ENG != nil){
                     movie.SubtitleExt.ENG.Content = [ApiConnect getSu:movie.SubtitleExt.ENG.Source params:nil];

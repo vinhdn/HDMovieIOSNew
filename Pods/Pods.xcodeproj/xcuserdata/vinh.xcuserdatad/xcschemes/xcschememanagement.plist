@@ -7,17 +7,27 @@
 		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-HDMovie.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-HDMovieTemplate.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>REFrostedViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>STPopup.xcscheme</key>
 		<dict>
@@ -42,6 +52,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5B41E1EA8BEB1E93A9682D7F5FE4FA6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5C46CB63CF6E7C54765F56D4833C22AC</key>
 		<dict>
 			<key>primary</key>
@@ -62,7 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B610784D4087BEB190C6BF2D0944B480</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B69702F79250BCB6C580F5F29CB7C603</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB1707515654C0C824DBCEA8AC63DBA9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4AE952F6B3807082206BE04E02574D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

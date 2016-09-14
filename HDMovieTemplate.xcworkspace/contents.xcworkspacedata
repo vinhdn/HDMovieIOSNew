@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/iservice/Downloads/HDMovieTemplate/HDMovie.xcodeproj">
+      location = "group:HDMovie.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
