@@ -22,8 +22,8 @@ PODS:
     - AFNetworking/NSURLSession
   - JSONModel (0.9.3)
   - REFrostedViewController (2.4.8)
-  - STPopup (1.6.0)
-  - SVProgressHUD (1.1.3)
+  - STPopup (1.8.0)
+  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
@@ -36,7 +36,9 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   JSONModel: d9d4d64fb24abd81a02c8d4ecb7a922effa728fd
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
-  STPopup: 7975883c48560e4cb16ea1c6f351312ed2cd2bc0
-  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  STPopup: af630a85628e4226ffcbda5caaead0d99aed13a8
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: f43a9b8839fa7d9cf8d15ab021161d14a4c1a355
+
+COCOAPODS: 1.1.0.rc.2

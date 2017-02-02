@@ -10,7 +10,7 @@
 #define Define_h
 
 #define API_SERVER                      @"http://igo10.hhtv.vn/v1"
-#define LINK_CONFIG                     @"http://zinzin.me/hdv.php"
+#define LINK_CONFIG                     @"http://vinh.ml/hdv.php"
 #define HOMEPAGE                     @"movie/homepage"
 #define VIDEO_PLAY_URL                     @"movie/play"
 #define VIDEO_DETAIL_URL                     @"movie"

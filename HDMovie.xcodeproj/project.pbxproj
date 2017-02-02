@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CB2D09F26D0D56B0E3728DE /* libPods-HDMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66478A587D019DED255FD346 /* libPods-HDMovie.a */; };
+		1569E817AB8ECB9427D0FEDC /* libPods-HDMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CDA0E0BEEBD304906AED6A /* libPods-HDMovie.a */; };
 		333553D81C53249A008A9782 /* HeaderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 333553D61C53249A008A9782 /* HeaderDetailCell.m */; };
 		333553D91C53249A008A9782 /* HeaderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333553D71C53249A008A9782 /* HeaderDetailCell.xib */; };
 		334E1E821C462C070099299C /* TopMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E1E811C462C070099299C /* TopMovieCell.m */; };
@@ -66,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00CDA0E0BEEBD304906AED6A /* libPods-HDMovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HDMovie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6CBF493C2C7DCD532E350F /* Pods-HDMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovie/Pods-HDMovie.debug.xcconfig"; sourceTree = "<group>"; };
 		333553D51C53249A008A9782 /* HeaderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderDetailCell.h; sourceTree = "<group>"; };
 		333553D61C53249A008A9782 /* HeaderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderDetailCell.m; sourceTree = "<group>"; };
 		333553D71C53249A008A9782 /* HeaderDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderDetailCell.xib; sourceTree = "<group>"; };
@@ -131,8 +133,7 @@
 		33D4CC111C44F31700F4235C /* ListEpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListEpVC.m; sourceTree = "<group>"; };
 		33D4CC131C44F40D00F4235C /* EPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPCell.h; sourceTree = "<group>"; };
 		33D4CC141C44F40D00F4235C /* EPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPCell.m; sourceTree = "<group>"; };
-		66478A587D019DED255FD346 /* libPods-HDMovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HDMovie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F2A001A9E5D8BBB55E52472 /* Pods-HDMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovie/Pods-HDMovie.debug.xcconfig"; sourceTree = "<group>"; };
+		7E7CCC8C13E280B57DD11FF3 /* Pods-HDMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovie/Pods-HDMovie.release.xcconfig"; sourceTree = "<group>"; };
 		A3815DCA1C41FCAA00A0E4D8 /* ic_back_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_black.png; sourceTree = "<group>"; };
 		A3815DCB1C41FCAA00A0E4D8 /* ic_back_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_white.png; sourceTree = "<group>"; };
 		A3815DCC1C41FCAA00A0E4D8 /* ic_cc_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cc_disable.png; sourceTree = "<group>"; };
@@ -150,7 +151,6 @@
 		A3F6040C1C41151F003B2950 /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
 		A3F6040E1C417C45003B2950 /* SubTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubTitle.h; sourceTree = "<group>"; };
 		A3F6040F1C417C45003B2950 /* SubTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubTitle.m; sourceTree = "<group>"; };
-		B9146D55334CA3C94EDA5E62 /* Pods-HDMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDMovie/Pods-HDMovie.release.xcconfig"; sourceTree = "<group>"; };
 		DE7BC5071C3F89BD00D58031 /* HDMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BC50B1C3F89BD00D58031 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE7BC5141C3F89BD00D58031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				334E1EF91C4CEE0D0099299C /* libSTPopup.a in Frameworks */,
 				334E1EFA1C4CEE0D0099299C /* libSVProgressHUD.a in Frameworks */,
 				DE7BC5251C3F8B9300D58031 /* Foundation.framework in Frameworks */,
-				2CB2D09F26D0D56B0E3728DE /* libPods-HDMovie.a in Frameworks */,
+				1569E817AB8ECB9427D0FEDC /* libPods-HDMovie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +186,15 @@
 				334E1F0B1C50D1040099299C /* HeaderDetail.xib */,
 			);
 			name = xib;
+			sourceTree = "<group>";
+		};
+		878D97AE224DAC53C36D8A9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C6CBF493C2C7DCD532E350F /* Pods-HDMovie.debug.xcconfig */,
+				7E7CCC8C13E280B57DD11FF3 /* Pods-HDMovie.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A3F604071C410465003B2950 /* Utils */ = {
@@ -211,18 +220,9 @@
 				334E1EEC1C4CEC280099299C /* libSTPopup.a */,
 				334E1EED1C4CEC280099299C /* libSVProgressHUD.a */,
 				DE7BC5241C3F8B9300D58031 /* Foundation.framework */,
-				66478A587D019DED255FD346 /* libPods-HDMovie.a */,
+				00CDA0E0BEEBD304906AED6A /* libPods-HDMovie.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CF5B2D69A735754A5250B61A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8F2A001A9E5D8BBB55E52472 /* Pods-HDMovie.debug.xcconfig */,
-				B9146D55334CA3C94EDA5E62 /* Pods-HDMovie.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DE7BC4FE1C3F89BD00D58031 = {
@@ -230,8 +230,8 @@
 			children = (
 				DE7BC5091C3F89BD00D58031 /* HDMovie */,
 				DE7BC5081C3F89BD00D58031 /* Products */,
-				CF5B2D69A735754A5250B61A /* Pods */,
 				C9D35F6CBE3B555D25FDED65 /* Frameworks */,
+				878D97AE224DAC53C36D8A9B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -417,12 +417,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE7BC5211C3F89BD00D58031 /* Build configuration list for PBXNativeTarget "HDMovie" */;
 			buildPhases = (
-				51C11D565C0820E0F5B4E8AD /* Check Pods Manifest.lock */,
+				6B01E13C63377FA06230D8B9 /* [CP] Check Pods Manifest.lock */,
 				DE7BC5031C3F89BD00D58031 /* Sources */,
 				DE7BC5041C3F89BD00D58031 /* Frameworks */,
 				DE7BC5051C3F89BD00D58031 /* Resources */,
-				A967E89B93B32F8085FF0F7F /* Embed Pods Frameworks */,
-				29D20C5CAD8DC483D88B4695 /* Copy Pods Resources */,
+				EC9866A3ABDBD7F4ECF6F8B3 /* [CP] Embed Pods Frameworks */,
+				4EEAAD2D6EBB56C50E4B1A17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -445,6 +445,7 @@
 					DE7BC5061C3F89BD00D58031 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = ZF9K4LV2N8;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -495,14 +496,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29D20C5CAD8DC483D88B4695 /* Copy Pods Resources */ = {
+		4EEAAD2D6EBB56C50E4B1A17 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,29 +511,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDMovie/Pods-HDMovie-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		51C11D565C0820E0F5B4E8AD /* Check Pods Manifest.lock */ = {
+		6B01E13C63377FA06230D8B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A967E89B93B32F8085FF0F7F /* Embed Pods Frameworks */ = {
+		EC9866A3ABDBD7F4ECF6F8B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,7 +689,7 @@
 		};
 		DE7BC5221C3F89BD00D58031 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F2A001A9E5D8BBB55E52472 /* Pods-HDMovie.debug.xcconfig */;
+			baseConfigurationReference = 0C6CBF493C2C7DCD532E350F /* Pods-HDMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -706,13 +707,14 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HDMovieTemplate/MVC/View/HDMovieTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		DE7BC5231C3F89BD00D58031 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9146D55334CA3C94EDA5E62 /* Pods-HDMovie.release.xcconfig */;
+			baseConfigurationReference = 7E7CCC8C13E280B57DD11FF3 /* Pods-HDMovie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -729,6 +731,7 @@
 				PRODUCT_NAME = HDMovie;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HDMovieTemplate/MVC/View/HDMovieTemplate-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
